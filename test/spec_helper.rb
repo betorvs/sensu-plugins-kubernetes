@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-require 'codeclimate-test-reporter'
+# require 'codeclimate-test-reporter'
+require 'simplecov'
 
 RSpec.configure do |c|
   # Sensu plugins run in the context of an at_exit handler. This prevents
@@ -24,7 +25,8 @@ RSpec.configure do |c|
   end
 end
 
-CodeClimate::TestReporter.start
+# CodeClimate::TestReporter.start
+SimpleCov.start
 
 def timestamp
   kind_of Numeric

@@ -1,4 +1,6 @@
-#! /usr/bin/env ruby
+# frozen_string_literal: true
+
+# ! /usr/bin/env ruby
 #
 #   check-kube-pods-runtime
 #
@@ -85,6 +87,7 @@ class PodRuntime < Sensu::Plugins::Kubernetes::CLI
       next unless pods_list.include?(pod.metadata.name) || pods_list.include?('all')
       # Check for Running state
       next unless pod.status.phase == 'Running'
+
       pod_stamp = Time.parse(pod.status.startTime)
       runtime = (Time.now.utc - pod_stamp.utc).to_i
 
@@ -109,8 +112,9 @@ class PodRuntime < Sensu::Plugins::Kubernetes::CLI
   end
 
   def parse_list(list)
-    return list.split(',') if list && list.include?(',')
+    return list.split(',') if list && list&.include?(',')
     return [list] if list
+
     ['']
   end
 end

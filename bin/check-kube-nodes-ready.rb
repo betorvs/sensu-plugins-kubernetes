@@ -1,4 +1,6 @@
-#! /usr/bin/env ruby
+# frozen_string_literal: true
+
+# ! /usr/bin/env ruby
 #
 #   check-kube-nodes-ready.rb
 #
@@ -64,6 +66,7 @@ class AllNodesAreReady < Sensu::Plugins::Kubernetes::CLI
         warning "#{node.name} does not have a status"
       elsif item.status != 'True'
         next if should_exclude_node(node.metadata.name)
+
         failed_nodes << node.metadata.name unless node.spec.unschedulable
       end
     end

@@ -1,4 +1,6 @@
-#! /usr/bin/env ruby
+# frozen_string_literal: true
+
+# ! /usr/bin/env ruby
 #
 #   pod-metrics
 #
@@ -49,6 +51,7 @@ class PodsMetrics < Sensu::Plugin::Metric::CLI::Graphite
         critical 'API error: ' << e.message
       end
       next if pod.nil?
+
       pod.each do
         count[s.metadata.name] += 1
       end

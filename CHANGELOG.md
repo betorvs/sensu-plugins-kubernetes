@@ -10,7 +10,8 @@ This CHANGELOG follows the format listed [here ](https://github.com/sensu-plugin
 ### Added
 - Travis build automation to generate Sensu Asset tarballs that can be used n conjunction with Sensu provided ruby runtime assets and the Bonsai Asset Index
 - Require latest sensu-plugin for [Sensu Go support](https://github.com/sensu-plugins/sensu-plugin#sensu-go-enablement)
- - 
+- Update all bugs reported by dependabot-preview bot: rubocop to 0.79.0, rake to 13.0, activesupport to 7.0.0, sensu-plugin to use 4.0, codeclimate-test-reporter to 1.0, kubeclient to >= 2.3 < 5.0
+
 ## [4.0.0] - 2018-12-15
 ### Security
 - updated rubocop dependency to `~> 0.51.0` per: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-8418. (@majormoses)
