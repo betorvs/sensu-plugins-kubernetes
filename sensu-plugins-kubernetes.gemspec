@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-lib = File.expand_path('../lib', __dir__)
+lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'date'
-require_relative './lib/sensu-plugins-kubernetes'
+require_relative 'lib/sensu-plugins-kubernetes'
 
-Gem::Specification.new do |s|
+Gem::Specification.new do |s| # rubocop:disable Metrics/BlockLength
   s.authors                = ['Sensu-Plugins and contributors']
   s.date                   = Date.today.to_s
   s.description            = 'Provides monitoring for Kubernetes via Sensu'
@@ -41,6 +41,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake',                      '~> 13.0'
   s.add_development_dependency 'redcarpet',                 '~> 3.2'
   s.add_development_dependency 'rspec',                     '~> 3.4'
-  s.add_development_dependency 'rubocop',                   '~> 0.79.0'
+  s.add_development_dependency 'rubocop',                   '~> 0.50.0'
   s.add_development_dependency 'yard',                      '~> 0.8'
 end

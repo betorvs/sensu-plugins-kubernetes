@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-# ! /usr/bin/env ruby
+#!/usr/bin/env ruby
 #
 #   check-kube-pods-restarting
 #
@@ -140,7 +138,7 @@ class PodsRestarting < Sensu::Plugins::Kubernetes::CLI
   end
 
   def parse_list(list)
-    return list.split(',') if list && list&.include?(',')
+    return list.split(',') if list && list.include?(',')
     return [list] if list
 
     ['']

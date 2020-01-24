@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module SensuPluginsKubernetes
   module Version
     MAJOR = 4
